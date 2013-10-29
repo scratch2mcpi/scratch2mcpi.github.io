@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=./scratch2mcpi/scratch2mcpi.sh
+Icon=scratch
+Terminal=false
+Name=Scratch2MCPI
+Comment=Control Minecraft Pi from Scratch 
+Categories=Application;Education;Development;
+MimeType=application/x-scratch-project

@@ -1,13 +1,28 @@
 #!/bin/sh
+
+cd /home/pi
+
+# Install Minecraft Pi
+echo "\n\033[36m\033[1mInstalling Minecraft Pi...\033[00m\n"
+wget -P /tmp https://s3.amazonaws.com/assets.minecraft.net/pi/minecraft-pi-0.1.1.tar.gz
+tar zxvf /tmp/minecraft-pi-0.1.1.tar.gz
+rm /tmp/minecraft-pi-0.1.1.tar.gz
+
+# Install scratch2mcpi
+echo "\n\033[36m\033[1mInstalling scratch2mcpi...\033[00m\n"
 sudo apt-get install python-setuptools
 sudo easy_install scratchpy
-wget -P /tmp https://github.com/champierre/scratch2minecraft/archive/master.zip
+wget -P /tmp https://github.com/scratch2mcpi/scratch2mcpi/archive/master.zip
 unzip /tmp/master.zip
-mv scratch2minecraft-master scratch2minecraft
+mv scratch2mcpi-master scratch2mcpi
 rm /tmp/master.zip
-if test -d /home/pi/mcpi/api/python/mcpi; then
-  cp -r /home/pi/mcpi/api/python/mcpi scratch2minecraft/
-else
-  echo "\033[31m\033[1mError: Unable to copy 'mcpi' directory to 'scratch2minecraft'. You should manually copy '[minecraft pi dir]/api/python/mcpi' to 'scratch2minecraft'.\033[00m"
-fi
-echo "Installation of scratch2minecraft is completed."
+cp -r /home/pi/mcpi/api/python/mcpi scratch2mcpi/
+
+# Download sample Scratch projects
+wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/hello_minecraft.sh
+
+# Download .desktop file
+wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi.desktop
+
+echo "\n\033[32m\033[1mInstallation of minecraft-pi and scratch2mcpi is completed.\033[00m\n"
+
