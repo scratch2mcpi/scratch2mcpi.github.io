@@ -11,3 +11,4 @@ rm /tmp/minecraft-pi-0.1.1.tar.gz
 # Copy Minecraft Pi shortcut on Desktop
 echo "\n\033[36m\033[1mCopying Minecraft Pi shortcut on Desktop...\033[00m\n"
 wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/mcpi.desktop
+
