@@ -20,10 +20,10 @@ cp -r /home/pi/mcpi/api/python/mcpi scratch2mcpi/
 
 # Download sample Scratch projects
 echo "\n\033[36m\033[1mDownloading sample Scratch projects...\033[00m\n"
-wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/hello_minecraft.sb
+wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_template.sb
 
-# Place Scratch2MCPI shortcut on Desktop 
-echo "\n\033[36m\033[1mPlacing Scratch2MCPI shortcut on Desktop...\033[00m\n"
+# Copy Scratch2MCPI shortcut on Desktop 
+echo "\n\033[36m\033[1mCopying Scratch2MCPI shortcut on Desktop...\033[00m\n"
 wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi.desktop
 
 echo "\n\033[32m\033[1mInstallation of minecraft-pi and scratch2mcpi is completed.\033[00m\n"

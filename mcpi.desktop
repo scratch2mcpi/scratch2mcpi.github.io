@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=/home/pi/mcpi/minecraft-pi
+Terminal=false
+Name=MinecraftPi
+Comment=Minecraft Pi 
+Categories=Game;
