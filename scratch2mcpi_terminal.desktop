@@ -2,10 +2,9 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Exec=/home/pi/scratch2mcpi/scratch2mcpi.sh
-Icon=scratch
+Exec=lxterminal -e /home/pi/scratch2mcpi/scratch2mcpi_terminal.sh
+Icon=lxterminal
 Terminal=false
-Name=Scratch2Mcpi
+Name=Scratch2McpiTerminal
 Comment=Control Minecraft Pi from Scratch 
 Categories=Application;Education;Development;
-MimeType=application/x-scratch-project
