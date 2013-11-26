@@ -21,6 +21,7 @@ cp -r /home/pi/mcpi/api/python/mcpi scratch2mcpi/
 # Download sample Scratch projects
 echo "\n\033[36m\033[1mDownloading sample Scratch projects...\033[00m\n"
 wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_template.sb
+wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/sphere.sb
 
 # Copy Scratch2MCPI shortcut on Desktop 
 echo "\n\033[36m\033[1mCopying Scratch2MCPI shortcut on Desktop...\033[00m\n"
