@@ -15,6 +15,7 @@ wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/mcpi.desktop
 # Download Python samples
 echo "\n\033[36m\033[1mDownloading Python samples...\033[00m\n"
 wget -P "/home/pi/mcpi/api/python" http://scratch2mcpi.github.io/python_samples/sphere.py
+chmod a+x /home/pi/mcpi/api/python/sphere.py
 
 echo "\n\033[32m\033[1mInstallation of minecraft-pi is completed.\033[00m\n"
 
