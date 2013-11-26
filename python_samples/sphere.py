@@ -4,8 +4,6 @@ import mcpi.block as block
 
 mc = minecraft.Minecraft.create()
 
-mc.player.setPos(15, 30, 15)
-
 for x in range(-10, 10):
   for y in range(20, 40):
     for z in range(-10, 10):
