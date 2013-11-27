@@ -3,6 +3,6 @@ Encoding=UTF-8
 Type=Application
 Exec=/home/pi/mcpi/minecraft-pi
 Terminal=false
-Name=MinecraftPi
+Name=Minecraft Pi
 Comment=Minecraft Pi 
 Categories=Game;

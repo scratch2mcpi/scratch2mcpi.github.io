@@ -5,6 +5,6 @@ Type=Application
 Exec=lxterminal -e /home/pi/scratch2mcpi/scratch2mcpi_terminal.sh
 Icon=lxterminal
 Terminal=false
-Name=Scratch2McpiTerminal
+Name=Scratch2MCPI Terminal
 Comment=Control Minecraft Pi from Scratch 
 Categories=Application;Education;Development;
