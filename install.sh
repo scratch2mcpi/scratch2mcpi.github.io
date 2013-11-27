@@ -10,7 +10,7 @@ rm /tmp/minecraft-pi-0.1.1.tar.gz
 
 # Install scratch2mcpi
 echo "\n\033[36m\033[1mInstalling scratch2mcpi...\033[00m\n"
-sudo apt-get install python-setuptools
+sudo apt-get -y install python-setuptools
 sudo easy_install scratchpy
 wget -P /tmp https://github.com/scratch2mcpi/scratch2mcpi/archive/master.zip
 unzip /tmp/master.zip
