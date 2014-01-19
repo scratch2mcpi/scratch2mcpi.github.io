@@ -23,10 +23,23 @@ echo "\n\033[36m\033[1mDownloading sample Scratch projects...\033[00m\n"
 wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_template.sb
 wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_sphere.sb
 
-# Copy Scratch2MCPI shortcut on Desktop 
-echo "\n\033[36m\033[1mCopying Scratch2MCPI shortcut on Desktop...\033[00m\n"
-wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi.desktop
-wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi_terminal.desktop
+# Copy Scratch2MCPI shortcut on Desktop
+if [ -f /home/pi/Desktop/scratch2mcpi.desktop ]
+then
+	echo "\n\033[33m\033[1mScratch2MCPI shortcut on Desktop exists. Skipped copying.\033[00m\n"
+else
+	echo "\n\033[36m\033[1mCopying Scratch2MCPI shortcut on Desktop...\033[00m\n"
+	wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi.desktop
+fi
+
+# Copy Scratch2MCPI Terminal shortcut on Desktop
+if [ -f /home/pi/Desktop/scratch2mcpi_terminal.desktop ]
+then
+	echo "\n\033[33m\033[1mScratch2MCPI Terminal shortcut on Desktop exists. Skipped copying.\033[00m\n"
+else
+	echo "\n\033[36m\033[1mCopying Scratch2MCPI Terminal shortcut on Desktop...\033[00m\n"
+	wget -P "/home/pi/Desktop" http://scratch2mcpi.github.io/scratch2mcpi_terminal.desktop
+fi
 
 echo "\n\033[32m\033[1mInstallation of scratch2mcpi is completed.\033[00m\n"
 
