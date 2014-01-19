@@ -9,8 +9,7 @@ tar zxvf /tmp/minecraft-pi-0.1.1.tar.gz
 rm /tmp/minecraft-pi-0.1.1.tar.gz
 
 # Copy Minecraft Pi shortcut on Desktop
-if [ -f /home/pi/Desktop/mcpi.desktop ]
-then
+if [ -f /home/pi/Desktop/mcpi.desktop ]; then
 	echo "\n\033[33m\033[1mMinecraft Pi shortcut on Desktop exists. Skipped copying.\033[00m\n"
 else
 	echo "\n\033[36m\033[1mCopying Minecraft Pi shortcut on Desktop...\033[00m\n"
