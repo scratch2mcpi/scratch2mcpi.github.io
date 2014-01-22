@@ -27,8 +27,17 @@ cp -rf /home/pi/mcpi/api/python/mcpi scratch2mcpi/
 
 # Download sample Scratch projects
 echo "\n\033[36m\033[1mDownloading sample Scratch projects...\033[00m\n"
-wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_template.sb
-wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_sphere.sb
+if [ -f "/home/pi/Documents/Scratch Projects/mcpi_template.sb" ]; then
+    echo "\n\033[33m\033[1mmcpi_template.sb exists. Skipped downloading.\033[00m\n"
+else
+    wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_template.sb
+fi
+
+if [ -f "/home/pi/Documents/Scratch Projects/mcpi_sphere.sb" ]; then
+    echo "\n\033[33m\033[1mmcpi_sphere.sb exists. Skipped downloading.\033[00m\n"
+else
+    wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_sphere.sb
+fi
 
 # Copy Scratch2MCPI shortcut on Desktop
 if [ -f /home/pi/Desktop/scratch2mcpi.desktop ]; then
