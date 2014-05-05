@@ -31,11 +31,31 @@
 </div>
 </div>
 <h1>Scratch2MCPI</h1>
-<h3>Scratch2MCPIとは</h3>
+<ul>
+<li>
+<a href='#scratch2mcpi'>Scratch2MCPIとは</a>
+</li>
+<li>
+<a href='#install'>インストール方法</a>
+</li>
+<li>
+<a href='#usage'>使い方</a>
+</li>
+<li>
+<a href='#troubleshooting'>Scratch2MCPI が動かなくなったら？</a>
+</li>
+<li>
+<a href='#faq'>FAQ</a>
+</li>
+<li>
+<a href='#others'>その他の情報</a>
+</li>
+</ul>
+<h3 id='scratch2mcpi'>Scratch2MCPIとは</h3>
 <p>
 Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf Pi(ラズベリーパイ版のマインクラフト)を操作できるようにするプログラムです。
 </p>
-<h3>インストール方法</h3>
+<h3 id='install'>インストール方法</h3>
 <p>
 インストールしていなければ、まずMinecraft Piをインストールします。
 </p>
@@ -50,13 +70,55 @@ Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf 
 <p>
 <code>% curl http://scratch2mcpi.github.io/install.sh | sh</code>
 </p>
-<h3>使い方</h3>
+<h3 id='usage'>使い方</h3>
 <ul>
 <li>Minecraft Piを起動し、Start Gameの次にCreate Newをクリックしてワールドを作成します。</li>
 <li>ワールドが作成されたら、デスクトップ上のScratch2MCPIをダブルクリックしてScratchとScratch2MCPIを起動します。</li>
 <li>Scratch上で緑の旗ボタンを押してサンプルスクリプトを実行します。マインクラフトのチャット欄に「hello minecraft」と表示されます。</li>
 </ul>
-<h3>FAQ</h3>
+<h3 id='troubleshooting'>Scratch2MCPI が動かなくなったら？</h3>
+<p>Scratch2MCPI が動かなくなった場合の症状や対処方法は、Scratch との再接続機能が追加された 1.0.2 以降とそれ以前とで異なります。</p>
+<h4>Sctatch2MCPI 1.0.2 以降</h4>
+<p>1.【原因】Scratch の「遠隔センサ接続」が有効になっていない。</p>
+<p>【症状】Scratch2MCPIの画面上に「エラー: スクラッチに接続できません…」と表示され続ける。</p>
+<p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、「遠隔センサー接続を有効にする」を選んで「遠隔センサー接続」を有効にする。Minecraft Pi の画面に「Scratch2MCPI connected to Minecraft Pi.」と表示されれば解決。</p>
+<p>2.【原因】Scratchを閉じてしまった。</p>
+<p>【症状】Scratch2MCPIの画面上に「エラー: スクラッチに接続できません…」と表示され続ける。</p>
+<p>【対処】デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
+<p>3.【原因】Scratch のメニューから「ファイル」->「新規」で新しいプロジェクトを開いた。または「ファイル」->「開く…」で別のプロジェクトを開いた。</p>
+<p>【症状】Scratch2MCPI は Scratch との再接続を試み、再接続に成功すれば Minecraft Pi の画面に 「Scratch2MCPI connected to Minecraft Pi.」と表示される。</p>
+<p>【対処】特になし</p>
+<p>4.【原因】Minecraft Piを閉じてしまった。</p>
+<p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Piとの接続は切れてしまっている。</p>
+<p>【対処】Scratch2MCPI の画面を閉じる。デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+<p>5.【原因】Minecraft Piのタイトル画面に戻ってしまった。</p>
+<p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Pi との接続は切れてしまっている。</p>
+<p>【対処】Scratch2MCPI の画面を閉じる。Minecraft Pi でワールドを選び直し遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+<p>6.【症状】1〜5 のどれにあてはまるかわからない。</p>
+<p>【対処】すべての画面を閉じる。まっさらな状態にしてから、デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にする。デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
+<p>7.【症状】6 の方法でもどうしても直らない。</p>
+<p>【対処】Raspberry Pi を再起動したあと、6 の対処方法を試みる。</p>
+<h4>Scratch2MCPI 1.0.1 以前</h4>
+<p>1.【原因】Scratch の「遠隔センサ接続」が有効になっていない。</p>
+<p>【症状】Scratch2MCPIは止まり、画面が閉じてしまう。</p>
+<p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、「遠隔センサー接続を有効にする」を選んで「遠隔センサー接続」を有効にしたうえで、デスクトップの「Scratch2MCPI Terminal」のアイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+<p>2.【原因】Scratchを閉じてしまった。</p>
+<p>【症状】Scratch2MCPI も一緒に止まり、画面が閉じてしまう。</p>
+<p>【対処】デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
+<p>3.【原因】Scratch のメニューから「ファイル」->「新規」で新しいプロジェクトを開いた。または「ファイル」->「開く…」で別のプロジェクトを開いた。</p>
+<p>【症状】Scratch2MCPI は止まり、画面が閉じてしまう。</p>
+<p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、もし「遠隔センサー接続を有効にする」と表示されていたらそれを選んで「遠隔センサ接続」を有効にする。すでに「遠隔センサ接続」が有効で、「遠隔センサー接続を無効にする」と表示されていたらそのままにする。デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+<p>4.【原因】Minecraft Piを閉じてしまった。</p>
+<p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Piとの接続は切れてしまっている。</p>
+<p>【対処】Scratch2MCPI の画面を閉じる。デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+<p>5.【原因】Minecraft Piのタイトル画面に戻ってしまった。</p>
+<p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Pi との接続は切れてしまっている。</p>
+<p>【対処】Scratch2MCPI の画面を閉じる。Minecraft Pi でワールドを選び直し遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+<p>6.【症状】1〜5 のどれにあてはまるかわからない。</p>
+<p>【対処】すべての画面を閉じる。まっさらな状態にしてから、デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にする。デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
+<p>7.【症状】6 の方法でもどうしても直らない。</p>
+<p>【対処】Raspberry Pi を再起動したあと、6 の対処方法を試みる。</p>
+<h3 id='faq'>FAQ</h3>
 <h4>Q. mcpiX must be a number. というメッセージがMinecraft Pi上に出続けて困る</h4>
 <p>
 初期バージョン1.0.0の問題です。
@@ -66,10 +128,10 @@ Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf 
 <h4>Q. Scratch2MCPIのバージョン番号はどのように確認するのですか？</h4>
 <p>
 Scratch2MCPIの画面（黒い画面）の最初の方に
-<pre>==================&#x000A;Scratch2MCPI 1.0.1&#x000A;==================</pre>
+<pre>==================&#x000A;Scratch2MCPI 1.0.2&#x000A;==================</pre>
 のように表示されています。
 </p>
-<h3>その他の情報</h3>
+<h3 id='others'>その他の情報</h3>
 <ul>
 <li>
 <a target="_blank" href="http://www.amazon.co.jp/dp/4822297314">Raspberry Piではじめるどきどきプログラミング (はじめるプログラミング シリーズ)</a>
