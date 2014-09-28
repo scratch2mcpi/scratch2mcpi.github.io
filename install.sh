@@ -2,7 +2,7 @@
 
 cd /home/pi
 
-if [ ! -d /home/pi/mcpi ] -a [ ! -f /usr/bin/minecraft-pi ]; then
+if [ ! -d /home/pi/mcpi -a ! -f /usr/bin/minecraft-pi ]; then
     echo "\n\033[33m\033[1mMinecraft Pi is not installed in your computer. Please install it first.\033[00m\n"
 else
     # Install scratch2mcpi
