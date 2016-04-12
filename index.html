@@ -36,7 +36,10 @@
 <a href='#scratch2mcpi'>Scratch2MCPIとは</a>
 </li>
 <li>
-<a href='#install'>インストール方法</a>
+<a href='#mcpi_install'>Minecraft Piのインストール</a>
+</li>
+<li>
+<a href='#scratch2mcpi_install'>Scratch2MPCIのインストール</a>
 </li>
 <li>
 <a href='#usage'>使い方</a>
@@ -55,9 +58,9 @@
 <p>
 Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf Pi(ラズベリーパイ版のマインクラフト)を操作できるようにするプログラムです。
 </p>
-<h3 id='install'>インストール方法</h3>
+<h3 id='mcpi_install'>Minecraft Piのインストール</h3>
 <p>
-インストールしていなければ、まずMinecraft Piをインストールします。(新しいバージョンのNOOBSでOSをインストールした場合、Minecraft Piはすでにインストールされています。デスクトップにMinecraft Piのアイコンがあればこのステップは飛ばしましょう)
+インストールしていなければ、まずMinecraft Piをインストールします。(バージョン1.3.10以降のNOOBSをインストールした場合、Minecraft Piは始めからインストールされています。デスクトップにMinecraft Piのアイコンがあればこのステップは飛ばしましょう)
 </p>
 <p>
 <a target="_blank" href="http://pi.minecraft.net/?p=68">http://pi.minecraft.net/?p=68</a>
@@ -66,6 +69,7 @@ Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf 
 <p>
 <code>% curl http://scratch2mcpi.github.io/mcpi.sh | sh</code>
 </p>
+<h3 id='scratch2mcpi_install'>Scratch2MCPIのインストール</h3>
 <p>次にScratch2MCPIを下記コマンドでインストールします。</p>
 <p>
 <code>% curl http://scratch2mcpi.github.io/install.sh | sh</code>
@@ -121,6 +125,12 @@ Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf 
 Scratch2MCPIの画面（黒い画面）の最初の方に
 <pre>==================&#x000A;Scratch2MCPI 1.0.2&#x000A;==================</pre>
 のように表示されています。
+</p>
+<h4>Q. 羊毛の色を変えたり、ドアの向きを変えるにはどうすればいいですか？</h4>
+<p>
+スクラッチから、変数blockDataの値を変えることで、羊毛の色を変えたり、ドアの向きを変えることができます。たとえば、blockTypeId=35、blockData=2にセットしてからsetBlockを送れば、赤紫色の羊毛を置けます。blockTypeId=64、blockData=7だと、蝶番が西側から見ると閉じている南西の角にある下半分のドアが置けます。blockDataの値に対応する各ブロックの種類は、
+<a target="_blank" href="http://minecraft-ja.gamepedia.com/%E3%83%87%E3%83%BC%E3%82%BF%E5%80%A4">データ値 - Minecraft Wiki</a>
+で調べてください。
 </p>
 <h3 id='others'>その他の情報</h3>
 <ul>
