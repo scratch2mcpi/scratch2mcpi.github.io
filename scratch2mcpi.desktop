@@ -2,10 +2,10 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Exec=/home/pi/scratch2mcpi/scratch2mcpi.sh
+Exec=/home/pi/scratch2mcpi/run_scratch2mcpi.py
 Icon=scratch
 Terminal=false
 Name=Scratch2MCPI
-Comment=Control Minecraft Pi from Scratch 
+Comment=Control Minecraft Pi from Scratch
 Categories=Application;Education;Development;
 MimeType=application/x-scratch-project
