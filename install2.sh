@@ -49,121 +49,27 @@ else
 
     # Download sample Scratch projects
     echo "\n\033[36m\033[1mDownloading sample Scratch projects...\033[00m\n"
-    if [ -f "/home/pi/Documents/Scratch Projects/mcpi_template.sb" ]; then
-        echo "\n\033[33m\033[1mmcpi_template.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_template.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/mcpi_sphere.sb" ]; then
-        echo "\n\033[33m\033[1mmcpi_sphere.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_sphere.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/mcpi_stagescanner.sb" ]; then
-        echo "\n\033[33m\033[1mmcpi_stagescanner.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_stagescanner.sb
-    fi
+    files="mcpi_template mcpi_sphere mcpi_stagescanner"
+    for file in $files
+    do
+      if [ -f "/home/pi/Documents/Scratch Projects/$file.sb" ]; then
+          echo "\n\033[33m\033[1m$file.sb exists. Skipped downloading.\033[00m\n"
+      else
+          wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/$file.sb
+      fi
+    done
 
     # Download MinecraftGraphicsTurtle and Stuff sample Scratch projects
     echo "\n\033[36m\033[1mDownloading MinecraftGraphicsTurtle and MinecraftStuff sample Scratch projects...\033[00m\n"
-    if [ -f "/home/pi/Documents/Scratch Projects/nasulab_template.sb" ]; then
-        echo "\n\033[33m\033[1mnasulab_template.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/nasulab_template.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/3dnautilus.sb" ]; then
-        echo "\n\033[33m\033[1m3dnautilus.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/3dnautilus.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/circle1.sb" ]; then
-        echo "\n\033[33m\033[1mcircle1.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/circle1.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/circle2.sb" ]; then
-        echo "\n\033[33m\033[1mcircle2.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/circle2.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/circle3.sb" ]; then
-        echo "\n\033[33m\033[1mcircle3.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/circle3.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/face1.sb" ]; then
-        echo "\n\033[33m\033[1mface1.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/face1.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/line1.sb" ]; then
-        echo "\n\033[33m\033[1mline1.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/line1.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/pattern.sb" ]; then
-        echo "\n\033[33m\033[1mpattern.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/pattern.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/pattern2.sb" ]; then
-        echo "\n\033[33m\033[1mpattern2.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/pattern2.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/pattern3.sb" ]; then
-        echo "\n\033[33m\033[1mpattern3.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/pattern3.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/spiral.sb" ]; then
-        echo "\n\033[33m\033[1mspiral.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/spiral.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/spiral2.sb" ]; then
-        echo "\n\033[33m\033[1mspiral2.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/spiral2.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/star1.sb" ]; then
-        echo "\n\033[33m\033[1mstar1.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/star1.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/star2.sb" ]; then
-        echo "\n\033[33m\033[1mstar2.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/star2.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/stuff1.sb" ]; then
-        echo "\n\033[33m\033[1mstuff1.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/stuff1.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/AdventuresInRasPi.sb" ]; then
-        echo "\n\033[33m\033[1mAdventuresInRasPi.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch_projects/AdventuresInRasPi.sb
-    fi
+    files="3dnautilus AdventuresInRasPi buildBoxHouse pattern3 star stuff_face wallbox_ans colorcircle drawcircle_color drawsphere_color stuff_line"
+    for file in $files
+    do
+      if [ -f "/home/pi/Documents/Scratch Projects/turtle_$file.sb" ]; then
+          echo "\n\033[33m\033[1mturtle_$file.sb exists. Skipped downloading.\033[00m\n"
+      else
+          wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch2mcpi_projects/turtle_$file.sb
+      fi
+    done
 
     # Copy Scratch2MCPI shortcut on Desktop
     if [ -f /home/pi/Desktop/scratch2mcpi.desktop ]; then
