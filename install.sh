@@ -27,37 +27,49 @@ else
         cp -rf /opt/minecraft-pi/api/python/mcpi scratch2mcpi/
     fi
 
-    # Download Python samples
-    echo "\n\033[36m\033[1mDownloading Python samples...\033[00m\n"
-    if [ -f "/home/pi/mcpi/api/python/sphere.py" ]; then
-        echo "\n\033[33m\033[1msphere.py exists. Skipped downloading.\033[00m\n"
-    else
-        if [ ! -d "/home/pi/mcpi/api/python" ]; then
-            mkdir -p /home/pi/mcpi/api/python
-        fi
-        wget -P "/home/pi/mcpi/api/python" http://scratch2mcpi.github.io/python_samples/sphere.py
-        chmod a+x /home/pi/mcpi/api/python/sphere.py
+    # Install Minecraft Graphics Turtle
+    echo "\n\033[36m\033[1mInstalling MinecraftGraphicsTurtle...\033[00m\n"
+    wget -P /tmp https://github.com/scratch2mcpi/minecraft-turtle/archive/master.zip
+    unzip /tmp/master.zip
+    if [ -d /home/pi/scratch2mcpi/minecraft-turtle/ ]; then
+        rm -rf scratch2mcpi/minecraft-turtle/
     fi
+    mv minecraft-turtle-master scratch2mcpi/mcturtle
+    rm /tmp/master.zip
+
+    # Install Minecraft Stuff
+    echo "\n\033[36m\033[1mInstalling MinecraftStuff...\033[00m\n"
+    wget -P /tmp https://github.com/scratch2mcpi/minecraft-stuff/archive/master.zip
+    unzip /tmp/master.zip
+    if [ -d /home/pi/scratch2mcpi/minecraft-stuff/ ]; then
+        rm -rf scratch2mcpi/minecraft-stuff/
+    fi
+    mv minecraft-stuff-master scratch2mcpi/mcstuff
+    rm /tmp/master.zip
 
     # Download sample Scratch projects
     echo "\n\033[36m\033[1mDownloading sample Scratch projects...\033[00m\n"
-    if [ -f "/home/pi/Documents/Scratch Projects/mcpi_template.sb" ]; then
-        echo "\n\033[33m\033[1mmcpi_template.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_template.sb
-    fi
+    files="mcpi_template mcpi_sphere mcpi_stagescanner"
+    for file in $files
+    do
+      if [ -f "/home/pi/Documents/Scratch Projects/$file.sb" ]; then
+          echo "\n\033[33m\033[1m$file.sb exists. Skipped downloading.\033[00m\n"
+      else
+          wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/$file.sb
+      fi
+    done
 
-    if [ -f "/home/pi/Documents/Scratch Projects/mcpi_sphere.sb" ]; then
-        echo "\n\033[33m\033[1mmcpi_sphere.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_sphere.sb
-    fi
-
-    if [ -f "/home/pi/Documents/Scratch Projects/mcpi_stagescanner.sb" ]; then
-        echo "\n\033[33m\033[1mmcpi_stagescanner.sb exists. Skipped downloading.\033[00m\n"
-    else
-        wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/mcpi_stagescanner.sb
-    fi
+    # Download MinecraftGraphicsTurtle and Stuff sample Scratch projects
+    echo "\n\033[36m\033[1mDownloading MinecraftGraphicsTurtle and MinecraftStuff sample Scratch projects...\033[00m\n"
+    files="3dnautilus AdventuresInRasPi buildBoxHouse pattern3 star stuff_face wallbox_ans colorcircle drawcircle_color drawsphere_color stuff_line"
+    for file in $files
+    do
+      if [ -f "/home/pi/Documents/Scratch Projects/turtle_$file.sb" ]; then
+          echo "\n\033[33m\033[1mturtle_$file.sb exists. Skipped downloading.\033[00m\n"
+      else
+          wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch2mcpi_projects/turtle_$file.sb
+      fi
+    done
 
     # Copy Scratch2MCPI shortcut on Desktop
     if [ -f /home/pi/Desktop/scratch2mcpi.desktop ]; then
