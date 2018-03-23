@@ -1,7 +1,6 @@
 #!/bin/sh
 
 desktop_dir=`xdg-user-dir DESKTOP`
-documents_dir=r=`xdg-user-dir DOCUMENTS`
 
 cd /home/pi
 
@@ -55,10 +54,10 @@ else
     files="mcpi_template mcpi_sphere mcpi_stagescanner"
     for file in $files
     do
-      if [ -f "$documents_dir/Scratch Projects/$file.sb" ]; then
+      if [ -f "/home/pi/Documents/Scratch Projects/$file.sb" ]; then
           echo "\n\033[33m\033[1m$file.sb exists. Skipped downloading.\033[00m\n"
       else
-          wget -P "$documents_dir/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/$file.sb
+          wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/$file.sb
       fi
     done
 
@@ -67,10 +66,10 @@ else
     files="3dnautilus AdventuresInRasPi buildBoxHouse pattern3 star stuff_face wallbox_ans colorcircle drawcircle_color drawsphere_color stuff_line"
     for file in $files
     do
-      if [ -f "$documents_dir/Scratch Projects/turtle_$file.sb" ]; then
+      if [ -f "/home/pi/Documents/Scratch Projects/turtle_$file.sb" ]; then
           echo "\n\033[33m\033[1mturtle_$file.sb exists. Skipped downloading.\033[00m\n"
       else
-          wget -P "$documents_dir/Scratch Projects" http://naominix.github.io/scratch2mcpi_projects/turtle_$file.sb
+          wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch2mcpi_projects/turtle_$file.sb
       fi
     done
 
