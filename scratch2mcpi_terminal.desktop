@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Exec=lxterminal -e /home/pi/scratch2mcpi/scratch2mcpi_terminal.sh
+Exec=sh -c "\$HOME/scratch2mcpi/scratch2mcpi_terminal.sh"
 Icon=lxterminal
 Terminal=false
 Name=Scratch2MCPI Terminal

@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Exec=/home/pi/scratch2mcpi/run_scratch2mcpi.py
+Exec=sh -c "\$HOME/scratch2mcpi/run_scratch2mcpi.py"
 Icon=scratch
 Terminal=false
 Name=Scratch2MCPI
