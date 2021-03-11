@@ -1,10 +1,11 @@
 #!/bin/sh
 
 desktop_dir=`xdg-user-dir DESKTOP`
+home_dir=`xdg-user-dir HOME`
 
-cd /home/pi
+cd $home_dir
 
-if [ ! -d /home/pi/mcpi -a ! -f /usr/bin/minecraft-pi ]; then
+if [ ! -d $home_dir/mcpi -a ! -f /usr/bin/minecraft-pi ]; then
     echo "\n\033[33m\033[1mMinecraft Pi is not installed in your computer. Please install it first.\033[00m\n"
 else
     # Install scratch2mcpi
@@ -17,7 +18,7 @@ else
     fi
     wget -P /tmp https://github.com/scratch2mcpi/scratch2mcpi/archive/master.zip
     unzip /tmp/master.zip
-    if [ -d /home/pi/scratch2mcpi ]; then
+    if [ -d $home_dir/scratch2mcpi ]; then
         cp -rf scratch2mcpi-master/* scratch2mcpi/
         rm -rf scratch2mcpi-master
     else
@@ -25,8 +26,8 @@ else
     fi
     rm /tmp/master.zip
 
-    if [ -d "/home/pi/mcpi/api/python/mcpi" ]; then
-        cp -rf /home/pi/mcpi/api/python/mcpi scratch2mcpi/
+    if [ -d "$home_dir/mcpi/api/python/mcpi" ]; then
+        cp -rf $home_dir/mcpi/api/python/mcpi scratch2mcpi/
     fi
 
     if [ -d "/opt/minecraft-pi/api/python/mcpi" ]; then
@@ -37,7 +38,7 @@ else
     echo "\n\033[36m\033[1mInstalling MinecraftGraphicsTurtle...\033[00m\n"
     wget -P /tmp https://github.com/scratch2mcpi/minecraft-turtle/archive/master.zip
     unzip /tmp/master.zip
-    if [ -d /home/pi/scratch2mcpi/minecraft-turtle/ ]; then
+    if [ -d $home_dir/scratch2mcpi/minecraft-turtle/ ]; then
         rm -rf scratch2mcpi/minecraft-turtle/
     fi
     mv minecraft-turtle-master scratch2mcpi/mcturtle
@@ -47,7 +48,7 @@ else
     echo "\n\033[36m\033[1mInstalling MinecraftStuff...\033[00m\n"
     wget -P /tmp https://github.com/scratch2mcpi/minecraft-stuff/archive/master.zip
     unzip /tmp/master.zip
-    if [ -d /home/pi/scratch2mcpi/minecraft-stuff/ ]; then
+    if [ -d $home_dir/scratch2mcpi/minecraft-stuff/ ]; then
         rm -rf scratch2mcpi/minecraft-stuff/
     fi
     mv minecraft-stuff-master scratch2mcpi/mcstuff
@@ -58,10 +59,10 @@ else
     files="mcpi_template mcpi_sphere mcpi_stagescanner"
     for file in $files
     do
-      if [ -f "/home/pi/Documents/Scratch Projects/$file.sb" ]; then
+      if [ -f "$home_dir/Documents/Scratch Projects/$file.sb" ]; then
           echo "\n\033[33m\033[1m$file.sb exists. Skipped downloading.\033[00m\n"
       else
-          wget -P "/home/pi/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/$file.sb
+          wget -P "$home_dir/Documents/Scratch Projects" http://scratch2mcpi.github.io/scratch_projects/$file.sb
       fi
     done
 
@@ -70,10 +71,10 @@ else
     files="3dnautilus AdventuresInRasPi buildBoxHouse pattern3 star stuff_face wallbox_ans colorcircle drawcircle_color drawsphere_color stuff_line"
     for file in $files
     do
-      if [ -f "/home/pi/Documents/Scratch Projects/turtle_$file.sb" ]; then
+      if [ -f "$home_dir/Documents/Scratch Projects/turtle_$file.sb" ]; then
           echo "\n\033[33m\033[1mturtle_$file.sb exists. Skipped downloading.\033[00m\n"
       else
-          wget -P "/home/pi/Documents/Scratch Projects" http://naominix.github.io/scratch2mcpi_projects/turtle_$file.sb
+          wget -P "$home_dir/Documents/Scratch Projects" http://naominix.github.io/scratch2mcpi_projects/turtle_$file.sb
       fi
     done
 
