@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=sh -c "\$HOME/scratch2mcpi/bullseye/scratch2mcpi_terminal.sh"
+Icon=lxterminal
+Terminal=false
+Name=Scratch2MCPI Terminal
+Comment=Control Minecraft Pi from Scratch 
+Categories=Application;Education;Development;
