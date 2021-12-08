@@ -1,203 +1,223 @@
 <!DOCTYPE html>
-<html lang='ja'></html>
-<head>
-<meta charset='utf-8'>
-<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-<title>Scratch2MCPI</title>
-<meta content='' name='description'>
-<meta content='' name='author'>
-<meta content='width=device-width, initial-scale=1.0' name='viewport'>
-<link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<div class='container'>
-<div class='navbar navbar-inverse navbar-fixed-top'>
-<div class='navbar-inner'>
-<div class='container'>
-<a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-<span class='icon-bar'></span>
-<span class='icon-bar'></span>
-<span class='icon-bar'></span>
-</a>
-<a class='brand' href='/'>Scratch2MCPI</a>
-<div class='nav-collapse collapse'>
-<ul class='nav'>
-<li class='active'>
-<a href='https://github.com/scratch2mcpi/scratch2mcpi'>English</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<h1>Scratch2MCPI</h1>
-<ul>
-<li>
-<a href='#scratch2mcpi'>Scratch2MCPIとは</a>
-</li>
-<li>
-<a href='#tested_environments'>検証済みの環境</a>
-</li>
-<li>
-<a href='#mcpi_install'>Minecraft Piのインストール</a>
-</li>
-<li>
-<a href='#scratch2mcpi_install'>Scratch2MPCIのインストール</a>
-</li>
-<li>
-<a href='#usage'>使い方</a>
-</li>
-<li>
-<a href='#troubleshooting'>Scratch2MCPI が動かなくなったら？</a>
-</li>
-<li>
-<a href='#faq'>FAQ</a>
-</li>
-<li>
-<a href='#others'>その他の情報</a>
-</li>
-</ul>
-<h3 id='scratch2mcpi'>Scratch2MCPIとは</h3>
-<p>
-Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf Pi(ラズベリーパイ版のマインクラフト)を操作できるようにするプログラムです。
-</p>
+<html lang='ja'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>Scratch2MCPI</title>
+    <meta content='' name='description'>
+    <meta content='' name='author'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/w9lkdCEPKWc?rel=0" frameborder="0" allowfullscreen></iframe>
-<p>↑ Version 2.0 で Minecraft Graphics Turtle に対応しました</p>
+  <body>
+    <div class='container'>
+      <div class='navbar navbar-inverse navbar-fixed-top'>
+        <div class='navbar-inner'>
+          <div class='container'>
+            <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+            </a>
+            <a class='brand' href='/'>Scratch2MCPI</a>
+            <div class='nav-collapse collapse'>
+              <ul class='nav'>
+                <li class='active'>
+                  <a href='https://github.com/scratch2mcpi/scratch2mcpi'>English</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1>Scratch2MCPI</h1>
+      <ul>
+        <li><a href='#scratch2mcpi'>Scratch2MCPIとは</a></li>
+        <li><a href='#installation_on_bullseye'>Raspberry Pi OS Bullseyeでのインストール方法</a></li>
+        <li><a href='#installation_on_other_os'>その他のRaspberry Pi OSでのインストール方法</a></li>
+        <li><a href='#usage'>使い方</a></li>
+        <li><a href='#troubleshooting'>Scratch2MCPIが動かなくなったら？</a></li>
+        <li><a href='#faq'>FAQ</a></li>
+        <li><a href='#others'>その他の情報</a></li>
+      </ul>
 
-<h3 id='tested_environments'>検証済みの環境</h3>
-<ul>
-<li>NOOBS 2.9.0(2018-10-11)</li>
-</ul>
+      <h2 id='scratch2mcpi'>Scratch2MCPIとは</h2>
+      <p>
+        Raspberry Pi(ラズベリーパイ)上のScratch(スクラッチ)からMinecraf Pi(ラズベリーパイ版のマインクラフト)を操作できるようにするプログラムです。
+      </p>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/w9lkdCEPKWc?rel=0" frameborder="0" allowfullscreen></iframe>
+      <p>↑ Version 2.0 で Minecraft Graphics Turtle に対応しました</p>
 
-<h3 id='mcpi_install'>Minecraft Piのインストール</h3>
-<p>
-インストールしていなければ、まずMinecraft Piをインストールします。(バージョン1.3.10以降のNOOBSをインストールした場合、Minecraft Piは始めからインストールされています。デスクトップにMinecraft Piのアイコンがあればこのステップは飛ばしましょう)
-</p>
-<p>
-<a target="_blank" href="http://pi.minecraft.net/?p=68">http://pi.minecraft.net/?p=68</a>
-よりダウンロードしてインストールするか下記コマンドでインストールすることができます。
-</p>
-<p>
-<code>% curl http://scratch2mcpi.github.io/mcpi.sh | sh</code>
-</p>
-<h3 id='scratch2mcpi_install'>Scratch2MCPIのインストール</h3>
-<p>次にScratch2MCPIを下記コマンドでインストールします。</p>
-<p>
-<code>% curl http://scratch2mcpi.github.io/install.sh | sh</code>
-</p>
-<h3 id='usage'>使い方</h3>
-<ul>
-<li>Minecraft Piを起動し、Start Gameの次にCreate Newをクリックしてワールドを作成します。</li>
-<li>ワールドが作成されたら、デスクトップ上のScratch2MCPIをダブルクリックしてScratchとScratch2MCPIを起動します。</li>
-<li>Scratch上で緑の旗ボタンを押してサンプルスクリプトを実行します。マインクラフトのチャット欄に「hello minecraft」と表示されます。</li>
-</ul>
-<h3 id='troubleshooting'>Scratch2MCPI が動かなくなったら？</h3>
-<p>Scratch2MCPI が動かなくなった場合の症状や対処方法は、Scratch との再接続機能が追加された 1.0.2 以降とそれ以前とで異なります。</p>
-<h4>Sctatch2MCPI 1.0.2 以降</h4>
-<p>1.【原因】Scratch の「遠隔センサ接続」が有効になっていない。</p>
-<p>【症状】Scratch2MCPIの画面上に「エラー: スクラッチに接続できません…」と表示され続ける。</p>
-<p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、「遠隔センサー接続を有効にする」を選んで「遠隔センサー接続」を有効にする。Minecraft Pi の画面に「Scratch2MCPI connected to Minecraft Pi.」と表示されれば解決。</p>
-<p>2.【原因】Scratchを閉じてしまった。</p>
-<p>【症状】Scratch2MCPIの画面上に「エラー: スクラッチに接続できません…」と表示され続ける。</p>
-<p>【対処】デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
-<p>3.【原因】Scratch のメニューから「ファイル」->「新規」で新しいプロジェクトを開いた。または「ファイル」->「開く…」で別のプロジェクトを開いた。</p>
-<p>【症状】Scratch2MCPI は Scratch との再接続を試み、再接続に成功すれば Minecraft Pi の画面に 「Scratch2MCPI connected to Minecraft Pi.」と表示される。</p>
-<p>【対処】特になし</p>
-<h4>Scratch2MCPI 1.0.1 以前</h4>
-<p>1.【原因】Scratch の「遠隔センサ接続」が有効になっていない。</p>
-<p>【症状】Scratch2MCPIは止まり、画面が閉じてしまう。</p>
-<p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、「遠隔センサー接続を有効にする」を選んで「遠隔センサー接続」を有効にしたうえで、デスクトップの「Scratch2MCPI Terminal」のアイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
-<p>2.【原因】Scratchを閉じてしまった。</p>
-<p>【症状】Scratch2MCPI も一緒に止まり、画面が閉じてしまう。</p>
-<p>【対処】デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
-<p>3.【原因】Scratch のメニューから「ファイル」->「新規」で新しいプロジェクトを開いた。または「ファイル」->「開く…」で別のプロジェクトを開いた。</p>
-<p>【症状】Scratch2MCPI は止まり、画面が閉じてしまう。</p>
-<p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、もし「遠隔センサー接続を有効にする」と表示されていたらそれを選んで「遠隔センサ接続」を有効にする。すでに「遠隔センサ接続」が有効で、「遠隔センサー接続を無効にする」と表示されていたらそのままにする。デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
-<h4>Scratch2MCPI 1.0.2 以降と 1.0.1 以前で共通</h4>
-<p>4.【原因】Minecraft Piを閉じてしまった。</p>
-<p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Piとの接続は切れてしまっている。</p>
-<p>【対処】Scratch2MCPI の画面を閉じる。デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
-<p>5.【原因】Minecraft Piのタイトル画面に戻ってしまった。</p>
-<p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Pi との接続は切れてしまっている。</p>
-<p>【対処】Scratch2MCPI の画面を閉じる。Minecraft Pi でワールドを選び直し遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
-<p>6.【症状】1〜5 のどれにあてはまるかわからない。</p>
-<p>【対処】すべての画面を閉じる。まっさらな状態にしてから、デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にする。デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
-<p>7.【症状】6 の方法でもどうしても直らない。</p>
-<p>【対処】Raspberry Pi を再起動したあと、6 の対処方法を試みる。</p>
-<h3 id='faq'>FAQ</h3>
-<h4>Q. mcpiX must be a number. というメッセージがMinecraft Pi上に出続けて困る</h4>
-<p>
-初期バージョン1.0.0の問題です。
-<code>% curl http://scratch2mcpi.github.io/install.sh | sh</code>
-を実行して1.0.1以降のバージョンに入れ替えてください。
-</p>
-<h4>Q. Scratch2MCPIのバージョン番号はどのように確認するのですか？</h4>
-<p>
-Scratch2MCPIの画面（黒い画面）の最初の方に
-<pre>==================&#x000A;Scratch2MCPI 1.0.2&#x000A;==================</pre>
-のように表示されています。
-</p>
-<h4>Q. 羊毛の色を変えたり、ドアの向きを変えるにはどうすればいいですか？</h4>
-<p>
-スクラッチから、変数blockDataの値を変えることで、羊毛の色を変えたり、ドアの向きを変えることができます。たとえば、blockTypeId=35、blockData=2にセットしてからsetBlockを送れば、赤紫色の羊毛を置けます。blockTypeId=64、blockData=7だと、蝶番が西側から見ると閉じている南西の角にある下半分のドアが置けます。blockDataの値に対応する各ブロックの種類は、
-<a target="_blank" href="http://minecraft-ja.gamepedia.com/%E3%83%87%E3%83%BC%E3%82%BF%E5%80%A4">データ値 - Minecraft Wiki</a>
-で調べてください。
-</p>
-<h3 id='others'>その他の情報</h3>
-<ul>
-<li>
-<a target="_blank" href="http://www.amazon.co.jp/dp/4822253120">Raspberry Piではじめるどきどきプログラミング増補改訂第2版 (はじめるプログラミング シリーズ)</a>
-- Raspberry Piの設定方法からScratchの使い方、Scratch2MCPIを使ってScratchからMinecraft Piを操作する方法、ScratchでGPIOを使う方法までを小学生でもわかるように平易に解説しています。増補改訂版で最新の Raspberry Pi 3 モデルに完全対応しています。
-</li>
-<li>
-<a target="_blank" href="http://blog.champierre.com/tags/minecraft/">ScratchでMinecraftを動かす</a>
-- Mac版のMinecraftでもプラグインを使えば、Scratchから動かすことができる方法を紹介しています。
-</li>
-<li>
-<a target="_blank" href="http://scratch.mit.edu/studios/352573/projects/">Scratch2MCPI で使えるプロジェクト集</a>
-- Scratch2MCPIで使えるプロジェクトを集めた、Scratchサイトのスタジオのページです。どなたでも自分のプロジェクトを追加できます。
-</li>
-</ul>
-<p>
-Scratch2MCPIはScratchからの命令をPythonに変換してMinecraft Piに渡すことで、Minecraft Piをコントロールしています。Pythonでプログラムを書いたほうがScratch2MCPIよりも多くのことが、しかも高速で実行できます。
-</p>
-<p>
-以下にPythonでMinecraft Piを動かすときに参考となる情報を載せておきます。
-</p>
-<ul>
-<li>
-<a target="_blank" href="http://dotinstall.com/lessons/basic_python_v2">Python入門 - ドットインストール</a>
-- まずはこちらでPythonについて勉強しましょう。
-</li>
-<li>
-<a target="_blank" href="http://www.stuffaboutcode.com/p/minecraft-api-reference.html">Minecraft API(英語)</a>
-</li>
-<li>
-<a target="_blank" href="http://www.stuffaboutcode.com/p/minecraft.html">&lt;Stuff about=&quot;code&quot; /&gt;: Minecraft(英語)</a>
-- Minecraft Pi上で動くアナログ時計など、Minecraft PiをコントロールするPythonのプログラムの例がたくさん紹介されています。
-</li>
-</ul>
+      <h2 id='installation_on_bullseye'>Raspberry Pi OS Bullseyeでのインストール方法</h2>
 
-<footer>
-<p>Code licensed under MIT License, documentation under CC BY 3.0.</p>
-</footer>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
-<script>
-  //<![CDATA[
-    window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.8.3.min.js"><\/script>')
-  //]]>
-</script>
-<script src="/javascripts/plugins.js" type="text/javascript"></script>
-<script src="/javascripts/script.js" type="text/javascript"></script>
-<script src="/javascripts/bootstrap.js" type="text/javascript"></script>
-<script src="/javascripts/highlight.pack.js" type="text/javascript"></script>
-<link href="/stylesheets/solarized_light.css" media="screen" rel="stylesheet" type="text/css" />
-<script>hljs.initHighlightingOnLoad();</script>
-<!-- :javascript -->
-<!-- var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
-<!-- (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
-<!-- g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js'; -->
-<!-- s.parentNode.insertBefore(g,s)}(document,'script')); -->
-</body>
+      <h3 id='mcpi_install'>Minecraft Pi Reborn Clientのインストール</h3>
+      <p>
+        Minecraft Pi Reborn Clientをインストールします。
+      </p>
+      <p>
+        Minecraft Pi Rebornの<a target="_blank" href="https://jenkins.thebrokenrail.com/job/minecraft-pi-reborn/job/master/lastSuccessfulBuild/artifact/out/">パッケージ一覧</a>よりminecraft-pi-reborn-client_x.y.z_armhf.debをダウンロードします(x.y.zはバージョン番号)。
+      </p>
+      <p>
+        ダウンロードしたパッケージを下記コマンドでインストールします。
+      </p>
+      <p>
+        <code>% dpkg -i minecraft-pi-reborn-client_x.y.z_armhf.deb</code>
+      </p>
+
+      <h3 id='scratch2mcpi_install'>Scratch2MCPIのインストール</h3>
+      <p>Scratch2MCPIを下記コマンドでインストールします。</p>
+      <p>
+        <code>% curl http://scratch2mcpi.github.io/bullseye/install.sh | sh</code>
+      </p>
+
+      <h2 id='installation_on_other_os'>その他のRaspberry Pi OSでのインストール方法</h2>
+
+      <h3 id='mcpi_install'>Minecraft Piのインストール</h3>
+      <p>
+        インストールしていなければ、まずMinecraft Piをインストールします。(バージョン1.3.10以降のNOOBSをインストールした場合、Minecraft Piは始めからインストールされています。デスクトップにMinecraft Piのアイコンがあればこのステップは飛ばしましょう)
+      </p>
+      <p>
+        <a target="_blank" href="http://pi.minecraft.net/?p=68">http://pi.minecraft.net/?p=68</a>よりダウンロードしてインストールするか下記コマンドでインストールすることができます。
+      </p>
+      <p>
+        <code>% curl http://scratch2mcpi.github.io/mcpi.sh | sh</code>
+      </p>
+
+      <h3 id='scratch2mcpi_install'>Scratch2MCPIのインストール</h3>
+      <p>次にScratch2MCPIを下記コマンドでインストールします。</p>
+      <p>
+        <code>% curl http://scratch2mcpi.github.io/install.sh | sh</code>
+      </p>
+
+      <h2 id='usage'>使い方</h2>
+      <ul>
+        <li>Minecraft Piを起動し、Start Gameの次にCreate Newをクリックしてワールドを作成します。</li>
+        <li>ワールドが作成されたら、デスクトップ上のScratch2MCPIをダブルクリックしてScratchとScratch2MCPIを起動します。</li>
+        <li>Scratch上で緑の旗ボタンを押してサンプルスクリプトを実行します。マインクラフトのチャット欄に「hello minecraft」と表示されます。</li>
+      </ul>
+
+      <h2 id='troubleshooting'>Scratch2MCPI が動かなくなったら？</h2>
+      <p>Scratch2MCPI が動かなくなった場合の症状や対処方法は、Scratch との再接続機能が追加された 1.0.2 以降とそれ以前とで異なります。</p>
+
+      <h3>Sctatch2MCPI 1.0.2 以降</h3>
+      <p>1.【原因】Scratch の「遠隔センサ接続」が有効になっていない。</p>
+      <p>【症状】Scratch2MCPIの画面上に「エラー: スクラッチに接続できません…」と表示され続ける。</p>
+      <p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、「遠隔センサー接続を有効にする」を選んで「遠隔センサー接続」を有効にする。Minecraft Pi の画面に「Scratch2MCPI connected to Minecraft Pi.」と表示されれば解決。</p>
+      
+      <p>2.【原因】Scratchを閉じてしまった。</p>
+      <p>【症状】Scratch2MCPIの画面上に「エラー: スクラッチに接続できません…」と表示され続ける。</p>
+      <p>【対処】デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
+
+      <p>3.【原因】Scratch のメニューから「ファイル」->「新規」で新しいプロジェクトを開いた。または「ファイル」->「開く…」で別のプロジェクトを開いた。</p>
+      <p>【症状】Scratch2MCPI は Scratch との再接続を試み、再接続に成功すれば Minecraft Pi の画面に 「Scratch2MCPI connected to Minecraft Pi.」と表示される。</p>
+      <p>【対処】特になし</p>
+
+      <h3>Scratch2MCPI 1.0.1 以前</h3>
+      <p>1.【原因】Scratch の「遠隔センサ接続」が有効になっていない。</p>
+      <p>【症状】Scratch2MCPIは止まり、画面が閉じてしまう。</p>
+      <p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、「遠隔センサー接続を有効にする」を選んで「遠隔センサー接続」を有効にしたうえで、デスクトップの「Scratch2MCPI Terminal」のアイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+
+      <p>2.【原因】Scratchを閉じてしまった。</p>
+      <p>【症状】Scratch2MCPI も一緒に止まり、画面が閉じてしまう。</p>
+      <p>【対処】デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
+
+      <p>3.【原因】Scratch のメニューから「ファイル」->「新規」で新しいプロジェクトを開いた。または「ファイル」->「開く…」で別のプロジェクトを開いた。</p>
+      <p>【症状】Scratch2MCPI は止まり、画面が閉じてしまう。</p>
+      <p>【対処】Scratch の「調べる」カテゴリーの「スライダーセンサーの値」の上で右クリックして、もし「遠隔センサー接続を有効にする」と表示されていたらそれを選んで「遠隔センサ接続」を有効にする。すでに「遠隔センサ接続」が有効で、「遠隔センサー接続を無効にする」と表示されていたらそのままにする。デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+
+      <h3>Scratch2MCPI 1.0.2 以降と 1.0.1 以前で共通</h3>
+      <p>4.【原因】Minecraft Piを閉じてしまった。</p>
+      <p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Piとの接続は切れてしまっている。</p>
+      <p>【対処】Scratch2MCPI の画面を閉じる。デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+
+      <p>5.【原因】Minecraft Piのタイトル画面に戻ってしまった。</p>
+      <p>【症状】Scratch2MCPI は止まらず画面は開いているが、Minecraft Pi との接続は切れてしまっている。</p>
+      <p>【対処】Scratch2MCPI の画面を閉じる。Minecraft Pi でワールドを選び直し遊べる状態にしてから、デスクトップの「Scratch2MCPI Terminal」アイコンをダブルクリックして Scratch2MCPI を起動し直す。</p>
+
+      <p>6.【症状】1〜5 のどれにあてはまるかわからない。</p>
+      <p>【対処】すべての画面を閉じる。まっさらな状態にしてから、デスクトップの「Minecraft Pi」のアイコンをダブルクリックして起動したあと、ワールドを選んで遊べる状態にする。デスクトップの「Scratch2MCPI」のアイコンをダブルクリックして、Scratch と Scratch2MCPI の両方を起動し直す。</p>
+
+      <p>7.【症状】6 の方法でもどうしても直らない。</p>
+      <p>【対処】Raspberry Pi を再起動したあと、6 の対処方法を試みる。</p>
+
+      <h2 id='faq'>FAQ</h2>
+      <h3>Q. mcpiX must be a number. というメッセージがMinecraft Pi上に出続けて困る</h3>
+      <p>
+        初期バージョン1.0.0の問題です。
+        <code>% curl http://scratch2mcpi.github.io/install.sh | sh</code>
+        を実行して1.0.1以降のバージョンに入れ替えてください。
+      </p>
+
+      <h3>Q. Scratch2MCPIのバージョン番号はどのように確認するのですか？</h3>
+      <p>
+        Scratch2MCPIの画面（黒い画面）の最初の方に
+        <pre>==================&#x000A;Scratch2MCPI 1.0.2&#x000A;==================</pre>
+        のように表示されています。
+      </p>
+
+      <h3>Q. 羊毛の色を変えたり、ドアの向きを変えるにはどうすればいいですか？</h3>
+      <p>
+        スクラッチから、変数blockDataの値を変えることで、羊毛の色を変えたり、ドアの向きを変えることができます。たとえば、blockTypeId=35、blockData=2にセットしてからsetBlockを送れば、赤紫色の羊毛を置けます。blockTypeId=64、blockData=7だと、蝶番が西側から見ると閉じている南西の角にある下半分のドアが置けます。blockDataの値に対応する各ブロックの種類は、
+        <a target="_blank" href="http://minecraft-ja.gamepedia.com/%E3%83%87%E3%83%BC%E3%82%BF%E5%80%A4">データ値 - Minecraft Wiki</a>
+        で調べてください。
+      </p>
+
+      <h2 id='others'>その他の情報</h2>
+      <ul>
+        <li>
+          <a target="_blank" href="http://www.amazon.co.jp/dp/4822253120">Raspberry Piではじめるどきどきプログラミング増補改訂第2版 (はじめるプログラミング シリーズ)</a>
+          - Raspberry Piの設定方法からScratchの使い方、Scratch2MCPIを使ってScratchからMinecraft Piを操作する方法、ScratchでGPIOを使う方法までを小学生でもわかるように平易に解説しています。増補改訂版で最新の Raspberry Pi 3 モデルに完全対応しています。
+        </li>
+        <li>
+          <a target="_blank" href="http://blog.champierre.com/tags/minecraft/">ScratchでMinecraftを動かす</a>
+          - Mac版のMinecraftでもプラグインを使えば、Scratchから動かすことができる方法を紹介しています。
+        </li>
+        <li>
+          <a target="_blank" href="http://scratch.mit.edu/studios/352573/projects/">Scratch2MCPI で使えるプロジェクト集</a>
+          - Scratch2MCPIで使えるプロジェクトを集めた、Scratchサイトのスタジオのページです。どなたでも自分のプロジェクトを追加できます。
+        </li>
+      </ul>
+      <p>
+        Scratch2MCPIはScratchからの命令をPythonに変換してMinecraft Piに渡すことで、Minecraft Piをコントロールしています。Pythonでプログラムを書いたほうがScratch2MCPIよりも多くのことが、しかも高速で実行できます。
+      </p>
+      <p>
+        以下にPythonでMinecraft Piを動かすときに参考となる情報を載せておきます。
+      </p>
+      <ul>
+        <li>
+          <a target="_blank" href="http://dotinstall.com/lessons/basic_python_v2">Python入門 - ドットインストール</a>
+          - まずはこちらでPythonについて勉強しましょう。
+        </li>
+        <li>
+          <a target="_blank" href="http://www.stuffaboutcode.com/p/minecraft-api-reference.html">Minecraft API(英語)</a>
+        </li>
+        <li>
+          <a target="_blank" href="http://www.stuffaboutcode.com/p/minecraft.html">&lt;Stuff about=&quot;code&quot; /&gt;: Minecraft(英語)</a>
+          - Minecraft Pi上で動くアナログ時計など、Minecraft PiをコントロールするPythonのプログラムの例がたくさん紹介されています。
+        </li>
+      </ul>
+
+      <footer>
+        <p>Code licensed under MIT License, documentation under CC BY 3.0.</p>
+      </footer>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+    <script>
+      //<![CDATA[
+        window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.8.3.min.js"><\/script>')
+      //]]>
+    </script>
+    <script src="/javascripts/plugins.js" type="text/javascript"></script>
+    <script src="/javascripts/script.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap.js" type="text/javascript"></script>
+    <script src="/javascripts/highlight.pack.js" type="text/javascript"></script>
+    <link href="/stylesheets/solarized_light.css" media="screen" rel="stylesheet" type="text/css" />
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- :javascript -->
+    <!-- var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
+    <!-- (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
+    <!-- g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js'; -->
+    <!-- s.parentNode.insertBefore(g,s)}(document,'script')); -->
+  </body>
+</html>
