@@ -11,6 +11,12 @@ else
     # Install scratch2mcpi
     echo "\n\033[36m\033[1mInstalling scratch2mcpi...\033[00m\n"
     sudo apt-get -y install python-setuptools
+
+    # Install pip2
+    wget -P /tmp https://bootstrap.pypa.io/pip/2.7/get-pip.py
+    sudo python2 /tmp/get-pip.py
+    rm /tmp/get-pip.py
+
     sudo pip2 install scratchpy
     wget -P /tmp https://github.com/scratch2mcpi/scratch2mcpi/archive/master.zip
     unzip /tmp/master.zip
