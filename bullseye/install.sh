@@ -5,7 +5,7 @@ home_dir=`xdg-user-dir HOME`
 
 cd $home_dir
 
-if [ ! -d /opt/minecraft-pi-reborn-client ]; then
+if [ ! -d /usr/lib/minecraft-pi-reborn-client ]; then
     echo "\n\033[33m\033[1mMinecraft Pi Reborn Client is not installed in your computer. Please install it first from https://github.com/MCPI-Revival/minecraft-pi-reborn.\033[00m\n"
 else
     # Install scratch2mcpi
@@ -28,7 +28,7 @@ else
     fi
     rm /tmp/master.zip
 
-    cp -rf /opt/minecraft-pi-reborn-client/api/python/mcpi scratch2mcpi/
+    cp -rf /usr/lib/minecraft-pi-reborn-client/api/python/mcpi scratch2mcpi/
 
     # Install Minecraft Graphics Turtle
     echo "\n\033[36m\033[1mInstalling MinecraftGraphicsTurtle...\033[00m\n"
